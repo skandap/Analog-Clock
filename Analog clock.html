@@ -1,0 +1,75 @@
+<html>
+    <style>
+       #clockcontainer
+       {
+        margin:auto;
+        height:40vw;
+        width:40vw;
+        background-size: 100%;
+        background:url(C:\\Users\\sahan\\OneDrive\\Pictures\\Screenshots\\clock.png.png) no-repeat skyblue;
+       }
+
+       #hour,#minute,#second
+       {
+        position:absolute;
+        background: black;
+        border-radius:10px;
+        transform-origin: bottom;
+       }
+
+
+     #hour
+     {
+         width:1.8%;
+         height:25%;
+         top:25%;
+         left:48.8%;
+         opacity:0.8;
+         
+     }
+
+     #minute
+     {
+         width:1.6%;
+         height:30%;
+         top:19%;
+         left:48.8%;
+         opacity:0.8;
+        
+     }
+
+     #second
+     {
+         width:1%;
+         height:38%;
+         top:9%;
+         left:49.5%;
+         opacity:0.8;   
+     }
+    </style>
+
+<script>
+setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minute.style.transform = `rotate(${mrotation}deg)`;
+    second.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+</script>
+
+    <body>
+       <div id="clockcontainer">
+       <div id="hour"></div>
+       <div id="minute"></div>
+       <div id="second"></div>
+    </div>
+    </body>
+
+</html>
